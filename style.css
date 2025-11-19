@@ -1,0 +1,46 @@
+
+
+.imgContainer{
+    background-image: url(images/plan.jpg);
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+    display: grid;
+    grid-template-columns: 1.66fr 0.75fr 1fr 1fr;
+    grid-template-rows: 34% 32% 33% ;
+    grid-template-areas: 
+    "Conference . serveurs securite"
+    "Reception . . ."
+    "Reception . personnel archive"
+}
+
+
+
+input.parsley-error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+input.parsley-success {
+    border-color: #10b981; 
+    background-color: #36835a ; 
+}
+
+.parsley-errors-list {
+    color: #ef4444;  
+    font-size: 0.875rem; 
+    margin-top: 0.25rem;
+}
+
+.parsley-errors-list li {
+    font-style: italic;
+    font-weight: 500;
+}
+
+
+
+
+
