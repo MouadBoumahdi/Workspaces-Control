@@ -23,6 +23,7 @@ ajoutBtn.addEventListener("click", () => {
 
 function hideForm() {
   formContainerAjout.classList.add("hidden");
+  employesChoose.classList.add('hidden')
   overlay.classList.add("hidden");
 }
 
@@ -199,36 +200,39 @@ function anassigment(){
 
 
 
+
+
+
+// partie assigned
 // add employe
 let buttons = document.querySelectorAll(".imgContainer > div > button")
 // console.log(boxes)
 
 
-const roleMap = [
-    "Réceptionnistes",
-    "Techniciens IT",
-    "Agents de sécurité",
-    "Manager",
-    "Nettoyage",
-    "AutresRoles"
-];
+const roleMap = {
+    "conference": ["Manager", "Réceptionnistes", "Techniciens IT", "Agents de sécurité", "Nettoyage", "Autres rôles"],
+    "personnel": ["Manager", "Réceptionnistes", "Techniciens IT", "Agents de sécurité", "Nettoyage", "Autres rôles"],
+    "servers": ["Techniciens IT", "Manager", "Nettoyage"],
+    "security": ["Agents de sécurité", "Manager", "Nettoyage"],
+    "Réception": ["Réceptionnistes", "Manager", "Nettoyage", "Autres rôles"],
+    "archive": ["Manager", "Réceptionnistes", "Techniciens IT", "Agents de sécurité"]
+};
 
 
-buttons.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-        overlay.classList.remove("hidden")
-        overlay.addEventListener('click',()=>{
-            overlay.classList.add("hidden")
-            employesChoose.classList.add("hidden")
-
-        })
-        const role = roleMap[i];
-        const filtered = employes.filter(emp => emp.role === role);
-        displayemployes(filtered);
-    });
+buttons.forEach((btn) => {
+   btn.addEventListener('click',()=>{
+    let rome_name = btn.getAttribute("rome-name")
+    let check = employes.filter(emp=>roleMap[rome_name].includes(emp.role))
+    overlay.classList.remove("hidden")
+    displayemployes(check)
+    overlay.addEventListener('click',()=>{
+        hideForm()
+    })
+    
+   })
 });
 
-
+let boxes = document.querySelectorAll(".imgContainer > div")
 function displayemployes(listrole){
     employesChoose.classList.remove("hidden")
     employesChoose.innerHTML = `
