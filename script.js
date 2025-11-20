@@ -89,7 +89,7 @@ cvform.addEventListener('submit',(e)=>{
     // console.log(employes)
     cvform.reset();                      
     img.src = 'images/user.png'
-    anassigment()
+    anassigment(employes)
     hideForm()
 })
 
@@ -119,10 +119,10 @@ function addExperience(){
 
 
 // display employe on anassigment part
-function anassigment(){
+function anassigment(list){
     employesContainer.innerHTML = ''
     
-    employes.forEach(employe=>{
+    list.forEach(employe=>{
         
         let div = document.createElement("div")
         div.className = "employe"
@@ -148,6 +148,7 @@ function anassigment(){
 
 
         div.addEventListener("click",()=>{
+            
             details.classList.remove('hidden')
             details.innerHTML = ''
             let div = document.createElement("div")
@@ -184,6 +185,7 @@ function anassigment(){
             
             details.append(div)
         })
+        
 
         
         
@@ -223,8 +225,11 @@ buttons.forEach((btn) => {
    btn.addEventListener('click',()=>{
     let rome_name = btn.getAttribute("rome-name")
     let check = employes.filter(emp=>roleMap[rome_name].includes(emp.role))
+    let parent = btn.parentElement
+
+    console.log(parent)
     overlay.classList.remove("hidden")
-    displayemployes(check)
+    displayemployes(check,parent)
     overlay.addEventListener('click',()=>{
         hideForm()
     })
@@ -233,7 +238,10 @@ buttons.forEach((btn) => {
 });
 
 let boxes = document.querySelectorAll(".imgContainer > div")
-function displayemployes(listrole){
+
+
+
+function displayemployes(listrole,parent){
     employesChoose.classList.remove("hidden")
     employesChoose.innerHTML = `
     <div class="mb-4 pb-3 border-b border-gray-200">
@@ -253,6 +261,60 @@ function displayemployes(listrole){
             </div>
         </div>
         `
+
+
+
+
+        div.addEventListener('click',()=>{
+            parent.append(div)
+            emp.status = "assigned"
+            
+            let nom = div.querySelector("h1").textContent
+            console.log(nom)
+            employes = employes.filter(emp=>emp.nom !== nom)
+            anassigment(employes)
+
+            // pour afficher le detail d employe
+            div.addEventListener('click',()=>{
+                    details.classList.remove('hidden')
+                    details.innerHTML = ''
+                    let div = document.createElement("div")
+                    div.className = "empdetail"
+                    div.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-lg p-6 max-w-md">
+                    <div class="flex items-center gap-4 pb-4 border-b border-gray-200">
+                                    <img src="${emp.url}" class="w-16 h-16 rounded-lg object-cover" alt="${emp.nom}">
+                                    <div>
+                                        <h1 class="font-semibold text-gray-900 text-xl">${emp.nom}</h1>
+                                        <p class="text-sm text-gray-500">${emp.role}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 space-y-2">
+                                    <p class="text-gray-700 text-sm">${emp.email}</p>
+                                    <p class="text-gray-700 text-sm">${emp.telephone}</p>
+                                    <p class="text-sm font-medium ${emp.status === 'assigned' ? 'text-green-600' : 'text-yellow-600'} capitalize">${emp.status}</p>
+                                </div>
+                                
+                        </div>
+            
+
+                    `
+
+                    // hide the detail section
+                    overlay.classList.remove("hidden")
+                    overlay.addEventListener("click",()=>{
+                        overlay.classList.add("hidden")
+                        details.classList.add('hidden')
+                    
+                    })
+                    
+                    details.append(div)
+                
+            })
+        })
+
+        
 
         employesChoose.append(div)
     })
