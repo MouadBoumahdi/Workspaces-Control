@@ -52,14 +52,13 @@ images/ - Dossier contenant toutes les images utilisées
 
 ##  Technologies utilisées
 
-- **HTML5 / CSS3 / JS Vanilla**
+- **HTML5 / CSS3 / JS PARSLEY**
 - **Flexbox & CSS Grid** pour le layout
 - **Media Queries** pour le responsive
-- **Animations CSS**
 - Déploiement : **GitHub Pages**
 
 
-##  Installation / Usage
+##  Demo
 
 Le projet est déjà **hébergé en ligne via GitHub Pages**.  
 Accéder au site :  https://mouadboumahdi.github.io/Workspaces-Control/
