@@ -43,9 +43,13 @@ L’objectif est de faciliter l’organisation et la répartition des employés 
 ##  Structure des fichiers
 
 Voici les fichiers et dossiers présents dans le projet :
+
 index.html - Page principale
+
 style.css - Feuille de style principale
+
 script.js - Script JavaScript principal
+
 images/ - Dossier contenant toutes les images utilisées
 
 
