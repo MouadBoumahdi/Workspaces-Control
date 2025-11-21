@@ -1,23 +1,21 @@
 
 # WorkSpaces
 
-## 📌 Présentation
+##  Présentation
 
 WorkSpaces est une **application web innovante** dédiée à la gestion interactive du personnel dans les espaces de travail.  
 L’objectif est de faciliter l’organisation et la répartition des employés sur un plan d’étage en **temps réel**, tout en respectant les **contraintes liées aux rôles et zones autorisées**.
 
----
 
-## 🎯 Objectifs
+##  Objectifs
 
 - Permettre l’ajout, la modification et la suppression d’employés via une interface graphique.
 - Assurer le respect des règles métier (ex : seuls les réceptionnistes peuvent occuper la réception).
 - Offrir une expérience utilisateur fluide, intuitive et responsive sur desktop, tablette et mobile.
 - Centraliser la gestion des données du personnel et la visualisation spatiale sur une même plateforme.
 
----
 
-## 🧩 Fonctionnalités
+##  Fonctionnalités
 
 ### Fonctionnalités principales
 
@@ -41,9 +39,8 @@ L’objectif est de faciliter l’organisation et la répartition des employés 
 - **Responsive design** .
 - Sauvegarde automatique de l’état du plan dans le **localStorage**.
 
----
 
-## 🗂️ Structure des fichiers
+##  Structure des fichiers
 
 Voici les fichiers et dossiers présents dans le projet :
 index.html - Page principale
@@ -53,7 +50,7 @@ images/ - Dossier contenant toutes les images utilisées
 
 
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 
 - **HTML5 / CSS3 / JS Vanilla**
 - **Flexbox & CSS Grid** pour le layout
@@ -62,7 +59,7 @@ images/ - Dossier contenant toutes les images utilisées
 - Déploiement : **GitHub Pages**
 
 
-## 📦 Installation / Usage
+##  Installation / Usage
 
 Le projet est déjà **hébergé en ligne via GitHub Pages**.  
 Accéder au site :  https://mouadboumahdi.github.io/Workspaces-Control/
