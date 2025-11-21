@@ -22,15 +22,15 @@
     
 </section>
 
-    <main class="flex mx-2 h-[100vh]">
+    <main class="flex flex-col md:flex-row mx-2 gap-2 h-[100vh]">
 
       <!-- section of add employes -->
-      <section class="sidebarContainer w-[20%] border-2 border-black rounded-xl">
+      <section class="sidebarContainer w-full md:w-[30%]   lg:w-[20%]  border-2 border-black rounded-xl">
         
         <!-- div of add employe -->
         <div class="navbar flex flex-col  overflow-hidden  rounded-2xl   gap-4 items-center  ">
           <h1 class="font-bold text-2xl">WorkSpaces</h1>
-          <button class="ajoutBtn  bg-emerald-500 py-2 px-[100px] flex border-2 rounded-lg justify-center text-black font-bold">Ajouter</button>
+          <button class="ajoutBtn  bg-emerald-500 py-2 px-[100px] flex border-2 rounded-lg justify-center text-black font-bold" >Ajouter</button>
           <h3 class="font-bold text-emerald-500">Les employés existants: </h3>
         </div>
 
@@ -38,6 +38,7 @@
         <div class="employesContainer h-[80%] mx-1 overflow-y-scroll flex flex-col gap-y-3 mt-1" style="scrollbar-width: none">
 
         </div>
+        
 
       </section>
 
@@ -45,37 +46,35 @@
 
 
       <!-- plan part(image)  -->
-      <section class="containerImage ml-2 h-[100%] w-full border-2 border-black rounded-xl">
-        <div class="imgContainer h-full">
+    <section class="containerImage ml-2 h-[100%] w-full border-2 border-black rounded-xl">
+  <div class="imgContainer h-full">
 
-          <div class="box1 flex justify-center items-center border-2 border-yellow-300 [grid-area:Conference] " rome-name="conference">
-            <button class="conferenceAjout bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8" rome-name="conference">+</button>     
-          </div>
+    <div class="box1 grid grid-cols-3 gap-2  border-2 border-yellow-300 [grid-area:Conference]" rome-name="conference">
+      <button class="conferenceAjout bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="conference">+</button>     
+    </div>
 
-          <div class="box2 bg-red-700/30 flex justify-center items-center border-2 border-yellow-300 [grid-area:serveurs]" max-number="3">
-            <button class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8" rome-name="servers">+</button>
-          </div>
+    <div class="box2 bg-red-700/30 flex flex-wrap gap-2 p-2 content-start border-2 border-yellow-300 [grid-area:serveurs]" max-number="3">
+      <button class="bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="servers">+</button>
+    </div>
 
-          <div class="box3 bg-red-700/30 flex justify-center items-center border-2 border-yellow-300 [grid-area:securite]" max-number="3">
-            <button class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8" rome-name="security">+</button>
-          </div>
+    <div class="box3 bg-red-700/30 flex flex-wrap gap-2 p-2 content-start border-2 border-yellow-300 [grid-area:securite]" max-number="3">
+      <button class="bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="security">+</button>
+    </div>
 
-          <div class="box4 bg-red-700/30 flex justify-center items-center border-2 border-yellow-300 [grid-area:Reception]" max-number="3">
-            <button class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8" rome-name="Réception">+</button>
-          </div>
+    <div class="box4 bg-red-700/30 flex flex-wrap gap-2 p-2 content-start border-2 border-yellow-300 [grid-area:Reception]" max-number="3">
+      <button class="bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="Réception">+</button>
+    </div>
 
-          <div class="box5  flex justify-center items-center border-2 border-yellow-300 [grid-area:personnel]" max-number="3">
-            <button class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8" rome-name="personnel">+</button>
-          </div>
+    <div class="box5 flex flex-wrap gap-2 p-2 content-start border-2 border-yellow-300 [grid-area:personnel]" max-number="3">
+      <button class="bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="personnel">+</button>
+    </div>
 
-          <div class="box6 bg-red-700/30 flex justify-center items-center border-2 border-yellow-300 [grid-area:archive]" max-number="3">
-            <button class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8" rome-name="archive">+</button>
-          </div>
+    <div class="box6 bg-red-700/30 flex flex-wrap gap-2 p-2 content-start border-2 border-yellow-300 [grid-area:archive]" max-number="3">
+      <button class="bg-emerald-500 rounded-md text-zinc-800 font-extrabold h-8 w-8 shrink-0" rome-name="archive">+</button>
+    </div>
 
-        </div>
-      </section>
-
-
+  </div>
+</section>
 
     </main>
 
@@ -131,7 +130,7 @@
           <input name="telephone" type="text" placeholder="+212 6 12 34 56 78" 
           class="w-full rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 p-3" 
           required
-          data-parsley-pattern="^\+212+(6|7|8|9)+[0-9]{9}$"
+          data-parsley-pattern="^\+212+(6|7|8|9)+[0-9]{8}$"
           data-parsley-trigger="change" 
           />
         </div>
