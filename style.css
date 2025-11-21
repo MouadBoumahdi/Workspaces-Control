@@ -9,7 +9,7 @@
     
 
     display: grid;
-    grid-template-columns: 1.66fr 0.75fr 1fr 1fr;
+    grid-template-columns:37.5% 17.5% 22.5% 23%;
     grid-template-rows: 34% 32% 33% ;
     grid-template-areas: 
     "Conference . serveurs securite"
@@ -17,6 +17,27 @@
     "Reception . personnel archive"
 }
 
+
+@media (max-width:1280px){
+    .imgContainer{
+            grid-template-columns:35.5% 20.5% 28.5% 16%;
+
+    }
+}
+@media (max-width: 1024px) {
+  .imgContainer{
+    display: grid;
+    grid-template-columns: 34% 1.5fr 1.9fr 1fr;
+    grid-template-rows: 34% 32% 33% ;
+  }
+}
+@media (max-width: 768px) {
+  .imgContainer{
+    display: grid;
+    grid-template-columns: 37.5% 17% 22.5% 1fr;
+    grid-template-rows: 34% 32% 33% ;
+  }
+}
 
 
 input.parsley-error {
@@ -26,7 +47,7 @@ input.parsley-error {
 
 input.parsley-success {
     border-color: #10b981; 
-    background-color: #36835a ; 
+    background-color: #69c99676 ; 
 }
 
 .parsley-errors-list {
