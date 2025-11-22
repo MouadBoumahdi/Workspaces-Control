@@ -133,27 +133,44 @@ function anassigment(list) {
 // showing details
 function showEmployeeDetails(employe) {
   details.classList.remove("hidden");
-  details.innerHTML = "";
-
+  details.innerHTML = '';
+ 
+  let experiencehtml = "";
+  for(let exp of employe.experiences){
+    experiencehtml += `
+      <div class="bg-gray-50 rounded-lg p-3 border-l-4 border-black">
+    <div class="flex justify-between items-start">
+      <div>
+        <p class="font-medium text-gray-900">${exp.poste}</p>
+        <p class="text-sm text-gray-500">${exp.entreprise}</p>
+      </div>
+      <span class="text-xs text-gray-400 whitespace-nowrap">${exp.debut} - ${exp.fin}</span>
+    </div>
+  </div>
+    `
+  }
   let div = document.createElement("div");
   div.className = "empdetail";
   div.innerHTML = `
-    <div class="bg-white rounded-xl shadow-lg p-6 max-w-md">
+    <div class="flex flex-col gap-5 bg-white rounded-xl shadow-lg p-6 max-w-md">
       <div class="flex items-center gap-4 pb-4 border-b border-gray-200">
         <img src="${employe.url}" class="w-16 h-16 rounded-lg object-cover" alt="${employe.nom}">
         <div>
           <h1 class="font-semibold text-gray-900 text-xl">${employe.nom}</h1>
           <p class="text-sm text-gray-500">${employe.role}</p>
-        </div>
+      </div>
       </div>
       <div class="mt-4 space-y-2">
         <p class="text-gray-700 text-sm">${employe.email}</p>
         <p class="text-gray-700 text-sm">${employe.telephone}</p>
         <p class="text-sm font-medium ${employe.status === "assigned" ? "text-green-600" : "text-yellow-600"} capitalize">${employe.status}</p>
       </div>
+       
+      ${experiencehtml}
+
     </div>
   `;
-
+  
   details.append(div);
   overlay.classList.remove("hidden");
 }
