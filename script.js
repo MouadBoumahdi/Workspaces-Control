@@ -186,7 +186,7 @@ const roleMap = {
 };
 
 const zonelimit = {
-  "conference": 6,
+  "conference": 5,
   "personnel": 5,
   "servers": 4,
   "security": 4,
@@ -195,12 +195,13 @@ const zonelimit = {
 };
 
 function limit(parent, room_name) {
+  let number = zonelimit[room_name] - 1
   if (parent.children.length >= zonelimit[room_name]) {
-    let number = zonelimit[room_name] - 1
-    alert("Max is " + number);
+    showtoast(number)
     return true;
+  }else{
+    return false;
   }
-  return false;
 }
 
  
@@ -287,4 +288,23 @@ function displayemployes(listrole, parent) {
 
     employesChoose.append(div);
   });
+}
+
+
+function showtoast(howmany){
+  let toast = document.createElement("div")
+  toast.className = 'absolute top-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg transition duration-300 opacity-0 shadow-lg';
+  toast.textContent =  "Max is "+howmany;
+
+
+  document.body.append(toast)
+  setTimeout(()=>{
+    toast.classList.remove("opacity-0")
+  },100)
+
+
+  setTimeout(()=>{
+    toast.remove()
+  },2000)
+  
 }
