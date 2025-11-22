@@ -81,8 +81,7 @@ cvform.addEventListener("submit", (e) => {
   employes.push(employe);
   localStorage.setItem("employes", JSON.stringify(employes));
 
-  // Clear form properly
-  experiencesList.innerHTML = ""; // Clear dynamic experiences
+  experiencesList.innerHTML = ""; 
   cvform.reset();
   img.src = "images/user.png";
   anassigment(employes.filter((emp) => emp.status === "unassigned"));
@@ -112,10 +111,9 @@ function anassigment(list) {
     let div = document.createElement("div");
     div.className = "employe";
     div.innerHTML = `
-      <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-green-500 cursor-pointer">
+      <div class="flex items-center m-auto w-[full] gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-green-500 cursor-pointer">
         <div class="relative">
-          <img src="${employe.url}" class="w-14 h-14 rounded-3xl object-cover" alt="${employe.nom}">
-          <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+          <img src="${employe.url}" class="w-14 h-14 border-2 rounded-3xl" alt="${employe.nom}">
         </div>
         <div class="flex-1">
           <h1 class="font-semibold text-gray-900 text-lg">${employe.nom}</h1>
