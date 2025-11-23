@@ -56,7 +56,7 @@ images/ - Dossier contenant toutes les images utilisées
 
 ##  Technologies utilisées
 
-- **HTML5 / CSS3 / JS PARSLEY**
+- **HTML5 / CSS3 / TAILWIND / JS PARSLEY**
 - **Flexbox & CSS Grid** pour le layout
 - **Media Queries** pour le responsive
 - Déploiement : **GitHub Pages**
