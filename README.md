@@ -1,6 +1,4 @@
 
-# WorkSpaces
-
 ##  Présentation
 
 WorkSpaces est une **application web innovante** dédiée à la gestion interactive du personnel dans les espaces de travail.  
